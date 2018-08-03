@@ -11,6 +11,7 @@ in the current working directory, then sorts all files into these folders.
 - Ignore this Python script
 - Generate directory names left based on the extensions of the files
 - Move all files into their associated directory
+- If a file has no extension, move it into "MISC" folder
 
 # Notes:
 Because the script skips directories, if you have a directory that pretends to
