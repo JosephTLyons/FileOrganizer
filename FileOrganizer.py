@@ -12,8 +12,8 @@ for subdir, dirs, files in os.walk (currentDirectory):
                 if not file.startswith ('.'):
                     # Get only text from file extension and capitalize
                     extension = os.path.splitext (file)[1].replace ('.', '').upper()
-                    # Check to make sure file has an exension
-                    if (len (os.path.splitext (file)[1])) <= 0:
+                    # Check to make sure file has an exension (if not, its an empty string)
+                    if (len (extension) <= 0):
                         extension = "MISC"
                     if not os.path.exists (extension):
                         os.mkdir (extension)
