@@ -6,9 +6,13 @@ in the current working directory, then sorts all files into these folders.
 ![FileOrganizer in Action](FileOrganizer.gif)
 
 # Rules:
-- Ignore all directories; don't change them
+- If a valid directory is specified as the second argument when running the
+script, it is used
+- If there is no second argument supplied, the script runs in the current
+directory
+- Ignore all directories; do nothing to them
 - Ignore all hidden files
-- Ignore this Python script
+- Ignore this Python script (if it resides in the folder being organized)
 - Generate directory names left based on the extensions of the files
 - Move all files into their associated directory
 - If a file has no extension, move it into "MISC" folder
