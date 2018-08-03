@@ -8,8 +8,8 @@ for subdir, dirs, files in os.walk (rootDir):
         # Will need to change back to "if os.path.isfile (file):" after completion
         if os.path.isfile (os.path.join (subdir, file)):
             # If file is THIS file, skip
-            if ("FileOrganizer.py" != file):
-                print ("doggy")
+            if (os.path.basename (__file__) != file):
+                print (file)
 
                 # if this is a hidden file, skip
 
