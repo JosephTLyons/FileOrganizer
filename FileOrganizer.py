@@ -17,5 +17,5 @@ for subdir, dirs, files in os.walk (currentDirectory):
                         extension = "MISC"
                     if not os.path.exists (extension):
                         os.mkdir (extension)
-                        os.rename (os.path.join (currentDirectory, file),
-                                   os.path.join (currentDirectory, extension, file))
+                    os.rename (os.path.join (currentDirectory, file),
+                               os.path.join (currentDirectory, extension, file))
