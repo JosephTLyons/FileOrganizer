@@ -15,7 +15,3 @@ for subdir, dirs, files in os.walk (currentDirectory):
                     if not os.path.exists (extension):
                         os.mkdir (extension)
                     os.rename (os.path.join (currentDirectory, file), os.path.join (currentDirectory, extension, file))
-
-# TODO: Add rules to README and update README to mention that this is like my Script version, but in Python
-        # Doesn't move this file, doesn't change already in place directories, doesn't move files in those directories
-        # Doesn't move hidden files,
