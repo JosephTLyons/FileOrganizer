@@ -3,7 +3,6 @@ import os
 
 currentDirectory = os.getcwd()
 
-# Can I safely remove subdir and dirs?
 for subdir, dirs, files in os.walk (currentDirectory):
     for file in files:
         if os.path.isfile (file):
@@ -17,7 +16,6 @@ for subdir, dirs, files in os.walk (currentDirectory):
                         os.mkdir (extension)
                     os.rename (currentDirectory + "/" + file, currentDirectory + "/" + extension + "/" + file)
 
-# TODO: Delete comments and remove the absolute file path to just relative
 # TODO: Add rules to README and update README to mention that this is like my Script version, but in Python
         # Doesn't move this file, doesn't change already in place directories, doesn't move files in those directories
         # Doesn't move hidden files,
