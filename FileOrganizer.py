@@ -11,6 +11,7 @@ for subdir, dirs, files in os.walk (currentDirectory):
             if os.path.basename (__file__) != file:
                 # Ignore hidden files
                 if not file.startswith ('.'):
+                    # Get just text from file extension and capitalize
                     extension = os.path.splitext (file)[1].replace ('.', '').upper()
                     if not os.path.exists (extension):
                         os.mkdir (extension)
