@@ -9,13 +9,9 @@ for subdir, dirs, files in os.walk (rootDir):
         if os.path.isfile (os.path.join (subdir, file)):
             # If file is THIS file, skip
             if os.path.basename (__file__) != file:
-                print (file)
-
-                # if this is a hidden file, skip
-
-                # else
-                    #print (file)
-                    # Delete line above
+                # Ignore hidden files
+                if not file.startswith('.'):
+                    print (file)
                     # Make directory based on files extension: example .txt -> TXT
                     # Move file
 
