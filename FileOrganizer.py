@@ -1,17 +1,20 @@
 #!/usr/bin/python
 import os
 
-rootDir = "/Users/josephlyons/Desktop/test"
+currentDirectory = os.getcwd()
 
-for subdir, dirs, files in os.walk (rootDir):
+# Can I safely remove subdir and dirs?
+for subdir, dirs, files in os.walk (currentDirectory):
     for file in files:
-        # Will need to change back to "if os.path.isfile (file):" after completion
-        if os.path.isfile (os.path.join (subdir, file)):
+        if os.path.isfile (file):
             # If file is THIS file, skip
             if os.path.basename (__file__) != file:
                 # Ignore hidden files
-                if not file.startswith('.'):
-                    print (file)
+                if not file.startswith ('.'):
+                    extension = os.path.splitext (file)[1].replace ('.', '').upper()
+                    if not os.path.exists (extension):
+                        print (extension)
+                        os.mkdir (extension)
                     # Make directory based on files extension: example .txt -> TXT
                     # Move file
 
