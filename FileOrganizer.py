@@ -4,11 +4,13 @@ import sys
 
 if (len (sys.argv) <= 1):
     currentDirectory = os.getcwd()
+
 else:
     currentDirectory = sys.argv[1]
 
 if not os.path.exists (currentDirectory):
     print ("Path specified does not exist.")
+
 else:
     for subdir, dirs, files in os.walk (currentDirectory):
         for file in files:
@@ -22,7 +24,9 @@ else:
                         # Check to make sure file has an exension (if not, its an empty string)
                         if (len (extension) <= 0):
                             extension = "MISC"
+
                         if not os.path.exists (os.path.join (currentDirectory, extension)):
                             os.mkdir (os.path.join (currentDirectory, extension))
+
                         os.rename (os.path.join (currentDirectory, file),
                                    os.path.join (currentDirectory, extension, file))
