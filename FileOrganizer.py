@@ -18,7 +18,7 @@ else:
                     # Ignore hidden files
                     if not file.startswith ('.'):
                         # Get only text from file extension and capitalize
-                        extension = os.path.splitext (file)[1].replace ('.', '').upper()
+                        extension = os.path.splitext (file)[1].replace ('.', '')
                         # Check to make sure file has an exension (if not, its an empty string)
                         if (len (extension) <= 0):
                             extension = "MISC"
