@@ -14,7 +14,9 @@ if not os.path.exists (currentDirectory):
 else:
     for subdir, dirs, files in os.walk (currentDirectory):
         for file in files:
-            if os.path.isfile (os.path.join (currentDirectory, file)):
+            pathToFile = os.path.join (currentDirectory, file)
+
+            if os.path.isfile (pathToFile):
                 # If file is THIS file, skip
                 if os.path.basename (__file__) != file:
                     # Ignore hidden files
@@ -25,8 +27,9 @@ else:
                         if (len (extension) <= 0):
                             extension = "MISC"
 
-                        if not os.path.exists (os.path.join (currentDirectory, extension)):
-                            os.mkdir (os.path.join (currentDirectory, extension))
+                        pathToNewDirectory = os.path.join (currentDirectory, extension)
 
-                        os.rename (os.path.join (currentDirectory, file),
-                                   os.path.join (currentDirectory, extension, file))
+                        if not os.path.exists (pathToNewDirectory):
+                            os.mkdir (pathToNewDirectory)
+
+                        os.rename (pathToFile, os.path.join (pathToNewDirectory, file))
