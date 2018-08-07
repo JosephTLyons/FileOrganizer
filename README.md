@@ -19,6 +19,9 @@ directory
 
 # Notes:
 Because the script skips directories, if you have a directory that pretends to
-be a simple file, it won't be moved.  This happens with applications that use
-that hide information inside a directory pretending to be a file, for example:
+be a simple file, it won't be moved.  This happens with applications that hide
+information inside a directory pretending to be a file, for example:
 `.xcodeproj`.  While this file will open up Xcode, it is actually a directory.
+
+# TODO
+- Update .gif
