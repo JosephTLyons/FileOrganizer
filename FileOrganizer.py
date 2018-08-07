@@ -12,6 +12,8 @@ if not os.path.exists (currentDirectory):
     print ("Path specified does not exist.")
 
 else:
+    print ("\n")
+
     for subdir, dirs, files in os.walk (currentDirectory):
         for file in files:
             pathToFile = os.path.join (currentDirectory, file)
@@ -33,3 +35,5 @@ else:
                             os.mkdir (pathToNewDirectory)
 
                         os.rename (pathToFile, os.path.join (pathToNewDirectory, file))
+
+                        print (file + " -> " + os.path.join (extension, file))
