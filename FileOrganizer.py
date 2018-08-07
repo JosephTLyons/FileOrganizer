@@ -12,7 +12,7 @@ if not os.path.exists (currentDirectory):
     print ("Path specified does not exist.")
 
 else:
-    for subdir, dirs, files in os.walk (currentDirectory):
+    for root, dirs, files in os.walk (currentDirectory):
         for file in files:
             pathToFile = os.path.join (currentDirectory, file)
 
