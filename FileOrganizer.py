@@ -21,7 +21,7 @@ else:
                 if os.path.basename (__file__) != file:
                     # Ignore hidden files
                     if not file.startswith ('.'):
-                        # Get only text from file extension and capitalize
+                        # Get only text from file extension
                         extension = os.path.splitext (file)[1].replace ('.', '')
                         # Check to make sure file has an exension (if not, its an empty string)
                         if (len (extension) <= 0):
